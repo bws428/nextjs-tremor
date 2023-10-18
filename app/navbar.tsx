@@ -10,7 +10,9 @@ import Image from 'next/image';
 const navigation = [
   { name: "Dashboard", href: "/", current: true },
   { name: "Flights", href: "/flights", current: false },
-  { name: "Calendar", href: "#", current: false },
+  { name: "Pricing", href: "/pricing", current: false },
+  { name: "Product", href: "/product", current: false },
+  { name: "Hero", href: "/hero", current: false },
 ];
 
 function classNames(...classes: any[]) {
@@ -20,7 +22,7 @@ function classNames(...classes: any[]) {
 export default function Navbar({ user }: { user: any }) {
   const pathname = usePathname();
   return (
-    <Disclosure as="nav" className="bg-white shadow-sm">
+    <Disclosure as="nav" className="bg-white shadow-md">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -74,7 +76,7 @@ export default function Navbar({ user }: { user: any }) {
                       <span className="sr-only">Open user menu</span>
                       <Image
                         className="h-8 w-8 rounded-full"
-                        src={user?.image || 'https://avatar.vercel.sh/leerob'}
+                        src={user?.image || "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"}
                         height={32}
                         width={32}
                         alt={`${user?.name || 'placeholder'} avatar`}
