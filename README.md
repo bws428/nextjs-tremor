@@ -2,7 +2,16 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, clone the repo and install the required dependencies:
+
+```bash
+gh repo clone bws428/nextjs-tremor
+cd nextjs-tremor
+
+pnpm i
+```
+
+Then start the development server:
 
 ```bash
 pnpm dev
