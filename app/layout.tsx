@@ -1,11 +1,11 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import Nav from "./nav";
+import Nav from "./components/Nav";
 
 // Inter font
 import { Inter } from "next/font/google";
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: `Next.js Tremor`,
@@ -20,13 +20,12 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full">
-        <body className={inter.className}>
+      <body className={inter.className}>
         <Suspense>
+          {/* @ts-expect-error Server Component */}
           <Nav />
         </Suspense>
-        <main className="p-4 md:p-10 mx-auto max-w-7xl">
-          {children}
-        </main>
+        <main className="p-4 md:p-10 mx-auto max-w-7xl">{children}</main>
       </body>
     </html>
   );
